@@ -5,6 +5,9 @@
 var saveBtnEl = $('.saveBtn');
 var timeBlockEl = $('.time-block');
 
+var today = dayjs();
+  $('#currentDay').html(today);
+
 $(document).ready(function() {
   saveBtnEl.on('click', function () {
     var text = $(this).siblings('.description').val();
@@ -32,7 +35,7 @@ $(document).ready(function() {
     timeBlockEl.each(function () {  // check conditions for time blocks
       var blockTime = parseInt($(this).attr('id').split('hour')[1]);
 
-      if (blockTime<currentTime)
+      if (blockTime<currentTime) {
         $(this).removeClass('future');
         $(this).removeClass('present');
         $(this).addClass('past');
@@ -47,7 +50,7 @@ $(document).ready(function() {
         $(this).removeClass('present');
         $(this).addClass('future');
       }
-        ) 
+        }) 
           }
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
@@ -62,12 +65,8 @@ $(document).ready(function() {
     $('#hour-14 .description').val(localStorage).getItem('hour14');
     $('#hour-15 .description').val(localStorage).getItem('hour15');
     $('#hour-16 .description').val(localStorage).getItem('hour16');
-    $('#hour-17 .description').val(localStorage).getItem('hour17');      
-  
-
-  // TODO: Add code to display the current date in the header of the page.
-  
-  var today = dayjs();
-  $('#currentDay').html(today);
+    $('#hour-17 .description').val(localStorage).getItem('hour17'); 
+    
+    timeTracker();
  
-        })
+  })
