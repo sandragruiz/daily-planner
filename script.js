@@ -58,3 +58,6 @@ $(document).ready(function() {
     timeTracker();
  
   })
+
+  //Problems I've run into: displaying the background colors depending on added class and retrieving from local storage.
+  //Any and all feedback greatly appreciated
