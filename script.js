@@ -13,7 +13,7 @@ $(document).ready(function() {
     var text = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
 
-    localStorage.setItem(time, text);
+    localStorage.setItem(time, JSON.stringify(text));
 })
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -57,15 +57,15 @@ $(document).ready(function() {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-    $('#hour-9 .description').val(localStorage).getItem('hour9');
-    $('#hour-10 .description').val(localStorage).getItem('hour10');
-    $('#hour-11 .description').val(localStorage).getItem('hour11');
-    $('#hour-12 .description').val(localStorage).getItem('hour12');
-    $('#hour-13 .description').val(localStorage).getItem('hour13');
-    $('#hour-14 .description').val(localStorage).getItem('hour14');
-    $('#hour-15 .description').val(localStorage).getItem('hour15');
-    $('#hour-16 .description').val(localStorage).getItem('hour16');
-    $('#hour-17 .description').val(localStorage).getItem('hour17'); 
+    $('#hour-9 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-10 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-11 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-12 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-13 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-14 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-15 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-16 .description').JSON.parse(localStorage.getItem(time, text));
+    $('#hour-17 .description').JSON.parse(localStorage.getItem(time, text)); 
     
     timeTracker();
  
