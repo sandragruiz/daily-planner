@@ -16,14 +16,16 @@ $(document).ready(function() {
     var time = $(this).parent().attr('id');
 
     //set local storage key value pairs
-    localStorage.setItem(time, JSON.stringify(text));
+    localStorage.setItem(time, text);
 })
 
   function timeTracker() {
     var currentTime = dayjs().hour(); // get current hour
     
     timeBlockEl.each(function () {  // check conditions for time blocks
-      var blockTime = parseInt($(this).attr('id').split('hour')[1]);
+      var blockTime = parseInt($(this).attr('id').split('-')[1]);
+      var storedEntry = localStorage.getItem($(this).attr('id'))
+      $(this).children("textarea").val(storedEntry)
 
       if (blockTime<currentTime) {
         $(this).removeClass('future');
@@ -41,19 +43,19 @@ $(document).ready(function() {
         $(this).addClass('future');
       }
         }) 
-          }
+      }
 
   //Get user input through local storage
-
-    $('#hour-9 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-10 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-11 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-12 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-13 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-14 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-15 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-16 .description').JSON.parse(localStorage.getItem(time, text));
-    $('#hour-17 .description').JSON.parse(localStorage.getItem(time, text)); 
+      // 
+    // $('#hour-9 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-10 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-11 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-12 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-13 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-14 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-15 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-16 .description').JSON.parse(localStorage.getItem(time, text));
+    // $('#hour-17 .description').JSON.parse(localStorage.getItem(time, text)); 
     
     timeTracker();
  
