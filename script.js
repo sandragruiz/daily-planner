@@ -44,22 +44,9 @@ $(document).ready(function() {
       }
         }) 
       }
-
-  //Get user input through local storage
-      // 
-    // $('#hour-9 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-10 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-11 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-12 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-13 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-14 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-15 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-16 .description').JSON.parse(localStorage.getItem(time, text));
-    // $('#hour-17 .description').JSON.parse(localStorage.getItem(time, text)); 
     
     timeTracker();
  
   })
 
-  //Problems I've run into: displaying the background colors depending on added class and retrieving from local storage.
-  //Any and all feedback greatly appreciated
+  
